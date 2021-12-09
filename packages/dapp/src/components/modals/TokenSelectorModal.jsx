@@ -113,7 +113,9 @@ export const TokenSelectorModal = ({ isOpen, onClose, onCustom }) => {
     async (chainId, customTokens) => {
       setLoading(true);
       try {
+        // eslint-disable-next-line no-console
         console.log(getGraphEndpoint(chainId));
+        // eslint-disable-next-line no-console
         console.log(getGraphEndpoint(getBridgeChainId(chainId)));
         const baseTokenList = await fetchTokenList(
           chainId,

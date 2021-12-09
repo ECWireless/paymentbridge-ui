@@ -23,7 +23,7 @@ export const useWeb3Context = () => useContext(Web3Context);
 
 const updateTitle = chainId => {
   const networkName = getNetworkName(chainId);
-  const defaultTitle = 'OmniBridge';
+  const defaultTitle = 'PaymentBridge';
   if (!process.env.REACT_APP_TITLE) {
     document.title = defaultTitle;
   } else {
@@ -74,7 +74,7 @@ const providerOptions = {
       description: 'Scan with Coinbase Wallet to connect',
     },
     options: {
-      appName: 'OmniBridge',
+      appName: 'PaymentBridge',
     },
     package: WalletLink,
     connector: async (WalletLinkPackage, options) => {

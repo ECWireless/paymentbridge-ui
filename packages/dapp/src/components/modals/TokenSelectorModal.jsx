@@ -69,10 +69,10 @@ export const TokenSelectorModal = ({ isOpen, onClose, onCustom }) => {
     enableForeignCurrencyBridge,
   } = useBridgeDirection();
 
-  const bridgeChainId = useMemo(() => getBridgeChainId(providerChainId), [
-    providerChainId,
-    getBridgeChainId,
-  ]);
+  const bridgeChainId = useMemo(
+    () => getBridgeChainId(providerChainId),
+    [providerChainId, getBridgeChainId],
+  );
 
   // Callbacks
   const fetchTokenListWithBalance = useCallback(
@@ -113,6 +113,8 @@ export const TokenSelectorModal = ({ isOpen, onClose, onCustom }) => {
     async (chainId, customTokens) => {
       setLoading(true);
       try {
+        console.log(getGraphEndpoint(chainId));
+        console.log(getGraphEndpoint(getBridgeChainId(chainId)));
         const baseTokenList = await fetchTokenList(
           chainId,
           getGraphEndpoint(chainId),
@@ -295,14 +297,8 @@ export const TokenSelectorModal = ({ isOpen, onClose, onCustom }) => {
             )}
             {!loading &&
               filteredTokenList.map(token => {
-                const {
-                  decimals,
-                  balance,
-                  name,
-                  address,
-                  logoURI,
-                  symbol,
-                } = token;
+                const { decimals, balance, name, address, logoURI, symbol } =
+                  token;
                 return (
                   <Button
                     variant="outline"

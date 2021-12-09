@@ -1,6 +1,8 @@
-# Omnibridge
+# PaymentBridge
 
-The OmniBridge [multi-token extension](https://docs.tokenbridge.net/eth-xdai-amb-bridge/multi-token-extension) for the Arbitrary Message Bridge is the simplest way to transfer ANY ERC20/ERC677/ERC827 token to and from the xDai chain.
+PaymentBridge is a UI wrapper combining both the xDAI bridge and OmniBridge extension. Using URL route parameters, a payer can send any ERC20/ERC677/ERC827 token to any receiving address on xDAI (including bridging DAI to the xDAI native token).
+
+See the OmniBridge docs here: https://docs.tokenbridge.net/eth-xdai-amb-bridge/multi-token-extension
 
 ## Available Scripts
 
